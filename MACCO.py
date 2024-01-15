@@ -1,0 +1,11 @@
+print('Hello im MAKKO a mac changer >_< ')
+print('Whats your name friend?\n')
+name =input('My is name, ')
+import subprocess
+interface =input('What interface would you like to change?\n >')
+mac =input('What MAC ADDRESS would you like to use, '+name+"\n >")
+print('[+]Changing MAC ADDRESS for '+interface+' to '+mac)
+subprocess.call(['ifconfig', interface, 'down'])
+subprocess.call(['ifconfig', interface, 'hw', 'ether', mac])
+subprocess.call(['ifconfig', interface, 'up'])
+print('[==] MAC ADDRESS for '+interface+' has been changed succesfully [==]')
